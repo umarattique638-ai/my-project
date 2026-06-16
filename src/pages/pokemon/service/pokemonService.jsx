@@ -1,8 +1,8 @@
 import axios from "axios";
-const API = "https://pokeapi.co/api/v2/pokemon?limit=124";
+import { getMovie } from "./axiosServices";
 
 export const pokeService = async () => {
-  const response = await axios.get(API);
+  const response = await getMovie();
   const responseData = response.data.results;
 
   const innerData = await Promise.all(
